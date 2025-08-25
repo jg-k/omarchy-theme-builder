@@ -1,0 +1,5 @@
+DOLLAR_SIGNcolor = rgb(${BG})
+DOLLAR_SIGNinner_color = rgb(${BG})
+DOLLAR_SIGNouter_color = rgb(${FG})
+DOLLAR_SIGNfont_color = rgb(${FG})
+DOLLAR_SIGNcheck_color = rgb(${BORDER_ACTIVE})

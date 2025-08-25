@@ -1,0 +1,31 @@
+[colors.primary]
+background = "#${BG}"
+foreground = "#${FG}"
+
+[colors.normal]
+black = "#${BLACK}"
+red = "#${RED}"
+green = "#${GREEN}"
+yellow = "#${YELLOW}"
+blue = "#${BLUE}"
+magenta = "#${MAGENTA}"
+cyan = "#${CYAN}"
+white = "#${WHITE}"
+
+[colors.bright]
+black = "#${BLACK}"
+red = "#${RED}"
+green = "#${GREEN}"
+yellow = "#${YELLOW}"
+blue = "#${BLUE}"
+magenta = "#${MAGENTA}"
+cyan = "#${CYAN}"
+white = "#${WHITE}"
+
+[colors.cursor]
+text = "#${BG}"
+cursor = "#${CURSOR}"
+
+[colors.selection]
+text = "#${BG}"
+background = "#${ACCENT}"

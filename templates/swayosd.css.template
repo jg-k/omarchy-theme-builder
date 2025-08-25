@@ -1,0 +1,5 @@
+@define-color background-color #${BG};
+@define-color border-color #${FG};
+@define-color label #${FG};
+@define-color image #${FG};
+@define-color progress #${FG};

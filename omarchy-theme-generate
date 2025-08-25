@@ -1,0 +1,150 @@
+#!/bin/bash
+
+# Change to script directory
+cd "$(dirname "$0")"
+
+# Default values
+THEME_DIR=""
+LIGHT_MODE=0
+INSTALL_THEME=0
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --light|-l)
+            LIGHT_MODE=1
+            shift
+            ;;
+        --install|-i)
+            INSTALL_THEME=1
+            shift
+            ;;
+        --help|-h)
+            echo "Usage: $0 THEME_DIR [OPTIONS]"
+            echo ""
+            echo "Arguments:"
+            echo "  THEME_DIR      Path to theme directory containing colors.sh"
+            echo ""
+            echo "Options:"
+            echo "  --light, -l    Create light.mode file"
+            echo "  --install, -i  Install theme to ~/.config/omarchy/themes/"
+            echo "  --help, -h     Show this help message"
+            echo ""
+            echo "Example:"
+            echo "  $0 themes/desert-twilight"
+            echo "  $0 themes/my-purple-theme --light"
+            echo "  $0 themes/my-theme --install"
+            exit 0
+            ;;
+        *)
+            THEME_DIR="$1"
+            shift
+            ;;
+    esac
+done
+
+# Check if theme directory was provided
+if [ -z "$THEME_DIR" ]; then
+    echo "Error: Theme directory is required"
+    echo "Usage: $0 THEME_DIR [OPTIONS]"
+    exit 1
+fi
+
+# Check if theme directory exists
+if [ ! -d "$THEME_DIR" ]; then
+    echo "Error: Theme directory '$THEME_DIR' not found"
+    exit 1
+fi
+
+# Check if colors.sh exists in theme directory
+COLOR_FILE="$THEME_DIR/colors.sh"
+if [ ! -f "$COLOR_FILE" ]; then
+    echo "Error: colors.sh not found in '$THEME_DIR'"
+    exit 1
+fi
+
+# Extract theme name from directory name
+THEME_NAME=$(basename "$THEME_DIR")
+
+echo "Building theme '$THEME_NAME' from color file: $COLOR_FILE"
+
+# Load colors from the specified file
+source "$COLOR_FILE"
+
+# Prepare Neovim plugin line (if variable exists)
+export NVIM_PLUGIN_LINE="${NVIM_PLUGIN:+
+	{ \"$NVIM_PLUGIN\" },}"
+
+# Create output directory with theme name
+OUTPUT_DIR="output/$THEME_NAME"
+mkdir -p "$OUTPUT_DIR"
+mkdir -p "$OUTPUT_DIR/backgrounds"
+
+# Copy background images from theme directory
+shopt -s nullglob
+for img in "$THEME_DIR"/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}; do
+    if [ -f "$img" ]; then
+        cp "$img" "$OUTPUT_DIR/backgrounds/"
+        echo "Copied background: $(basename "$img")"
+    fi
+done
+shopt -u nullglob
+
+# Generate configs from templates
+for template in templates/*.template; do
+    [ ! -f "$template" ] && continue
+    
+    filename=$(basename "$template" .template)
+    
+    # Skip neovim-custom.lua.template
+    [ "$filename" = "neovim-custom.lua" ] && continue
+    
+    envsubst < "$template" | sed 's/DOLLAR_SIGN/$/g' > "$OUTPUT_DIR/$filename"
+    echo "Generated: $OUTPUT_DIR/$filename"
+done
+
+# Create theme info file with timestamp
+{
+    echo "$THEME_NAME"
+    echo "Generated: $(date '+%Y-%m-%d %H:%M:%S')"
+} > "$OUTPUT_DIR/theme.info"
+echo "Generated: $OUTPUT_DIR/theme.info"
+
+# Create light.mode file if light mode is enabled
+if [ "$LIGHT_MODE" = "1" ]; then
+    touch "$OUTPUT_DIR/light.mode"
+    echo "Generated: $OUTPUT_DIR/light.mode"
+fi
+
+echo "Theme '$THEME_NAME' built successfully!"
+echo "Mode: $([ "$LIGHT_MODE" = "1" ] && echo "Light" || echo "Dark")"
+
+# Install to omarchy themes directory if requested
+if [ "$INSTALL_THEME" = "1" ]; then
+    OMARCHY_THEMES_DIR="$HOME/.config/omarchy/themes"
+    TARGET_DIR="$OMARCHY_THEMES_DIR/$THEME_NAME"
+    
+    # Create themes directory if it doesn't exist
+    mkdir -p "$OMARCHY_THEMES_DIR"
+    
+    # Check if theme already exists
+    if [ -d "$TARGET_DIR" ]; then
+        echo ""
+        read -p "Theme '$THEME_NAME' already exists. Overwrite? (y/n): " -n 1 -r
+        echo ""
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            echo "Installation cancelled."
+            exit 0
+        fi
+        rm -rf "$TARGET_DIR"
+    fi
+    
+    # Copy theme to omarchy themes directory
+    cp -r "$OUTPUT_DIR" "$TARGET_DIR"
+    echo ""
+    echo "Theme installed to: $TARGET_DIR"
+    
+    # Switch to the new theme
+    echo "Switching to theme: $THEME_NAME"
+    omarchy-theme-set "$THEME_NAME"
+fi

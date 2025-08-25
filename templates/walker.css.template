@@ -1,0 +1,6 @@
+@define-color selected-text #${ACCENT};
+@define-color text #${FG};
+@define-color base #${BG};
+@define-color border #${FG};
+@define-color foreground #${FG};
+@define-color background #${BG};

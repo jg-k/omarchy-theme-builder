@@ -1,0 +1,15 @@
+# Generated output
+output/
+
+# Color definition files (if you want to keep them private)
+private_themes/
+
+# Backup files
+*.bak
+*~
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
