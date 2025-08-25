@@ -71,6 +71,18 @@ echo "Building theme '$THEME_NAME' from color file: $COLOR_FILE"
 # Load colors from the specified file
 source "$COLOR_FILE"
 
+# Helper function to convert hex to RGB
+hex_to_rgb() {
+    local hex="${1#\#}"
+    local r=$((16#${hex:0:2}))
+    local g=$((16#${hex:2:2}))
+    local b=$((16#${hex:4:2}))
+    echo "$r,$g,$b"
+}
+
+# Generate Chromium RGB value from BG color
+export CHROMIUM_RGB_PRIMARY="$(hex_to_rgb "$CHROMIUM_BG")"
+
 # Prepare Neovim plugin line (if variable exists)
 export NVIM_PLUGIN_LINE="${NVIM_PLUGIN:+
 	{ \"$NVIM_PLUGIN\" },}"

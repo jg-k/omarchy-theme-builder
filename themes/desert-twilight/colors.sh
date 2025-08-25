@@ -7,7 +7,7 @@ export FG="e8d5c4"      # Warm light beige foreground / font
 export ACCENT="c9a882"          # Warm sandstone accent
 
 # TERMINAL Palette
-export BLACK="2a2520"   # Dark warm gray
+export BLACK="222222"   # Dark neutral gray
 export RED="c78376"     # Muted terracotta
 export GREEN="a8c5a8"   # Desert sage green
 export YELLOW="d4a574"  # Soft sandstone yellow
@@ -21,6 +21,8 @@ export BORDER_ACTIVE="$ACCENT"   # Active border color
 export BORDER_INACTIVE="$BLACK"
 export SELECTION_BG="3a3532"     # Slightly lighter gray
 export CURSOR="$ACCENT"          # Cursor color
+export CHROMIUM_BG="$BLACK"          # Cursor color
+
 
 # Icon theme
 export ICON_THEME="Yaru-wartybrown"  # Matches sandstone theme

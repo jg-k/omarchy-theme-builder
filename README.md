@@ -110,6 +110,7 @@ Generates unified theme files for:
 - **SwayOSD** - On-screen display styling
 - **Walker** - Application launcher theme
 - **Waybar** - Status bar colors
+- **Chromium** - Chromium background color
 
 ### Neovim disclaimer
 - I don't use vim and am not familiar with neovim extensions...
