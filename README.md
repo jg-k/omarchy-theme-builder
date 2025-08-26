@@ -1,19 +1,19 @@
-# Omarchy Theme Generator
+# Omarchy Theme Builder
 
-A template-based theme generator for creating consistent desktop themes across multiple applications for Omarchy
+A template-based theme builder for creating consistent desktop themes across multiple applications for Omarchy
 
 ## Quick Start
 
 ```bash
 # Build and install the example theme
-./omarchy-theme-generate themes/desert-twilight --install
+./omarchy-theme-build themes/desert-twilight --install
 
 # Create your own theme
 mkdir themes/my-theme
 cp themes/desert-twilight/colors.sh themes/my-theme/
 # Edit themes/my-theme/colors.sh with your colors
 # Add background images to themes/my-theme/ 
-./omarchy-theme-generate themes/my-theme --install
+./omarchy-theme-build themes/my-theme --install
 
 ```
 
@@ -36,9 +36,9 @@ Example theme included:
 Generate theme files from a theme folder:
 
 ```bash
-./omarchy-theme-generate themes/desert-twilight       # Build theme
-./omarchy-theme-generate themes/my-theme --light      # Build with light mode
-./omarchy-theme-generate themes/my-theme --install    # Build and install to Omarchy
+./omarchy-theme-build themes/desert-twilight       # Build theme
+./omarchy-theme-build themes/my-theme --light      # Build with light mode
+./omarchy-theme-build themes/my-theme --install    # Build and install to Omarchy
 ```
 
 **Options:**
@@ -68,7 +68,7 @@ Generate theme files from a theme folder:
 
 3. **Build and install the theme:**
    ```bash
-   ./omarchy-theme-generate themes/my-new-theme --install
+   ./omarchy-theme-build themes/my-new-theme --install
    ```
 
 The `--install` flag will:
