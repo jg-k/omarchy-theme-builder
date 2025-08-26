@@ -65,6 +65,7 @@ fi
 
 # Extract theme name from directory name
 THEME_NAME=$(basename "$THEME_DIR")
+export THEME_NAME
 
 echo "Building theme '$THEME_NAME' from color file: $COLOR_FILE"
 

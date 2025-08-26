@@ -111,6 +111,13 @@ Generates unified theme files for:
 - **Walker** - Application launcher theme
 - **Waybar** - Status bar colors
 - **Chromium** - Chromium background color
+- **Zed** - Zed editor styling
 
-### Neovim disclaimer
-- I don't use vim and am not familiar with neovim extensions...
+
+## Zed Theme Setup
+Live reloading not working for Zed. For now, you can either set the theme manually in Zed, or modify `omarchy-theme-set` to update `~/.config/zed/settings.json`.
+
+Live reloading purely with symlinks to omarchy current thems has proven unsuccessful so far. It does not seem to track changes to the target file.
+
+## Neovim Disclaimer
+I don't use vim and am not familiar with neovim extensions...

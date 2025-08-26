@@ -1,0 +1,248 @@
+{
+  "DOLLAR_SIGNschema": "https://zed.dev/schema/themes/v0.1.0.json",
+  "name": "${THEME_NAME}",
+  "author": "Omarchy Theme Builder",
+  "themes": [
+    {
+      "name": "${THEME_NAME}",
+      "appearance": "dark",
+      "style": {
+        "background": "#${BG}",
+        "foreground": "#${FG}",
+        "border": "#${BORDER_INACTIVE}",
+        "border.variant": "#${BORDER_ACTIVE}",
+        "border.focused": "#${ACCENT}",
+        "border.selected": "#${ACCENT}",
+        "border.transparent": "#${BG}00",
+        "border.disabled": "#${BORDER_INACTIVE}",
+        "elevated_surface.background": "#${BG}",
+        "surface.background": "#${BG}",
+        "element.background": "#${BG}",
+        "element.hover": "#${SELECTION_BG}",
+        "element.active": "#${SELECTION_BG}",
+        "element.selected": "#${SELECTION_BG}",
+        "element.disabled": "#${BG}",
+        "drop_target.background": "#${SELECTION_BG}80",
+        "ghost_element.background": "#${BG}00",
+        "ghost_element.hover": "#${SELECTION_BG}",
+        "ghost_element.active": "#${SELECTION_BG}",
+        "ghost_element.selected": "#${SELECTION_BG}",
+        "ghost_element.disabled": "#${BG}",
+        "text": "#${FG}",
+        "text.muted": "#${FG}99",
+        "text.placeholder": "#${FG}66",
+        "text.disabled": "#${FG}66",
+        "text.accent": "#${ACCENT}",
+        "icon": "#${FG}",
+        "icon.muted": "#${FG}99",
+        "icon.disabled": "#${FG}66",
+        "icon.placeholder": "#${FG}66",
+        "icon.accent": "#${ACCENT}",
+        "status_bar.background": "#${BG}",
+        "title_bar.background": "#${BG}",
+        "toolbar.background": "#${BG}",
+        "tab_bar.background": "#${BG}",
+        "tab.inactive_background": "#${BG}",
+        "tab.active_background": "#${SELECTION_BG}",
+        "search.match_background": "#${SELECTION_BG}",
+        "panel.background": "#${BG}",
+        "panel.focused_border": "#${ACCENT}",
+        "pane.focused_border": "#${ACCENT}",
+        "scrollbar.thumb.background": "#${FG}33",
+        "scrollbar.thumb.hover_background": "#${FG}66",
+        "scrollbar.thumb.border": "#${BG}00",
+        "scrollbar.track.background": "#${BG}00",
+        "scrollbar.track.border": "#${BG}00",
+        "editor.foreground": "#${FG}",
+        "editor.background": "#${BG}",
+        "editor.gutter.background": "#${BG}",
+        "editor.subheader.background": "#${BG}",
+        "editor.active_line.background": "#${SELECTION_BG}33",
+        "editor.highlighted_line.background": "#${SELECTION_BG}",
+        "editor.line_number": "#${FG}66",
+        "editor.active_line_number": "#${FG}",
+        "editor.invisible": "#${FG}33",
+        "editor.wrap_guide": "#${BORDER_INACTIVE}",
+        "editor.active_wrap_guide": "#${BORDER_ACTIVE}",
+        "editor.document_highlight.read_background": "#${SELECTION_BG}66",
+        "editor.document_highlight.write_background": "#${SELECTION_BG}99",
+        "terminal.background": "#${BG}",
+        "terminal.foreground": "#${FG}",
+        "terminal.bright_foreground": "#${FG}",
+        "terminal.dim_foreground": "#${FG}99",
+        "terminal.ansi.black": "#${BLACK}",
+        "terminal.ansi.bright_black": "#${BLACK}",
+        "terminal.ansi.dim_black": "#${BLACK}99",
+        "terminal.ansi.red": "#${RED}",
+        "terminal.ansi.bright_red": "#${RED}",
+        "terminal.ansi.dim_red": "#${RED}99",
+        "terminal.ansi.green": "#${GREEN}",
+        "terminal.ansi.bright_green": "#${GREEN}",
+        "terminal.ansi.dim_green": "#${GREEN}99",
+        "terminal.ansi.yellow": "#${YELLOW}",
+        "terminal.ansi.bright_yellow": "#${YELLOW}",
+        "terminal.ansi.dim_yellow": "#${YELLOW}99",
+        "terminal.ansi.blue": "#${BLUE}",
+        "terminal.ansi.bright_blue": "#${BLUE}",
+        "terminal.ansi.dim_blue": "#${BLUE}99",
+        "terminal.ansi.magenta": "#${MAGENTA}",
+        "terminal.ansi.bright_magenta": "#${MAGENTA}",
+        "terminal.ansi.dim_magenta": "#${MAGENTA}99",
+        "terminal.ansi.cyan": "#${CYAN}",
+        "terminal.ansi.bright_cyan": "#${CYAN}",
+        "terminal.ansi.dim_cyan": "#${CYAN}99",
+        "terminal.ansi.white": "#${WHITE}",
+        "terminal.ansi.bright_white": "#${WHITE}",
+        "terminal.ansi.dim_white": "#${WHITE}99",
+        "link_text.hover": "#${ACCENT}",
+        "conflict": "#${RED}",
+        "conflict.background": "#${RED}33",
+        "conflict.border": "#${RED}",
+        "created": "#${GREEN}",
+        "created.background": "#${GREEN}33",
+        "created.border": "#${GREEN}",
+        "deleted": "#${RED}",
+        "deleted.background": "#${RED}33",
+        "deleted.border": "#${RED}",
+        "error": "#${RED}",
+        "error.background": "#${RED}33",
+        "error.border": "#${RED}",
+        "hidden": "#${FG}66",
+        "hidden.background": "#${BG}",
+        "hidden.border": "#${BORDER_INACTIVE}",
+        "hint": "#${CYAN}",
+        "hint.background": "#${CYAN}33",
+        "hint.border": "#${CYAN}",
+        "ignored": "#${FG}66",
+        "ignored.background": "#${BG}",
+        "ignored.border": "#${BORDER_INACTIVE}",
+        "info": "#${BLUE}",
+        "info.background": "#${BLUE}33",
+        "info.border": "#${BLUE}",
+        "modified": "#${YELLOW}",
+        "modified.background": "#${YELLOW}33",
+        "modified.border": "#${YELLOW}",
+        "predictive": "#${FG}66",
+        "predictive.background": "#${SELECTION_BG}33",
+        "predictive.border": "#${BORDER_INACTIVE}",
+        "renamed": "#${BLUE}",
+        "renamed.background": "#${BLUE}33",
+        "renamed.border": "#${BLUE}",
+        "success": "#${GREEN}",
+        "success.background": "#${GREEN}33",
+        "success.border": "#${GREEN}",
+        "unreachable": "#${FG}66",
+        "unreachable.background": "#${BG}",
+        "unreachable.border": "#${BORDER_INACTIVE}",
+        "warning": "#${YELLOW}",
+        "warning.background": "#${YELLOW}33",
+        "warning.border": "#${YELLOW}",
+        "players": [
+          {
+            "cursor": "#${CURSOR}",
+            "background": "#${ACCENT}",
+            "selection": "#${SELECTION_BG}"
+          }
+        ],
+        "syntax": {
+          "attribute": {
+            "color": "#${CYAN}"          },
+          "boolean": {
+            "color": "#${YELLOW}"          },
+          "comment": {
+            "color": "#${FG}66",
+            "font_style": "italic"
+          },
+          "comment.doc": {
+            "color": "#${FG}99",
+            "font_style": "italic"
+          },
+          "constant": {
+            "color": "#${MAGENTA}"          },
+          "constructor": {
+            "color": "#${BLUE}"          },
+          "embedded": {
+            "color": "#${FG}"          },
+          "emphasis": {
+            "color": "#${FG}",
+            "font_style": "italic"
+          },
+          "emphasis.strong": {
+            "color": "#${FG}"          },
+          "enum": {
+            "color": "#${YELLOW}"          },
+          "function": {
+            "color": "#${BLUE}"          },
+          "function.method": {
+            "color": "#${BLUE}"          },
+          "function.special.definition": {
+            "color": "#${YELLOW}"          },
+          "hint": {
+            "color": "#${CYAN}"          },
+          "keyword": {
+            "color": "#${MAGENTA}"          },
+          "label": {
+            "color": "#${FG}"          },
+          "link_text": {
+            "color": "#${CYAN}"          },
+          "link_uri": {
+            "color": "#${CYAN}"          },
+          "namespace": {
+            "color": "#${FG}"          },
+          "number": {
+            "color": "#${YELLOW}"          },
+          "operator": {
+            "color": "#${FG}"          },
+          "parameter": {
+            "color": "#${FG}"          },
+          "preproc": {
+            "color": "#${MAGENTA}"          },
+          "primary": {
+            "color": "#${FG}"          },
+          "property": {
+            "color": "#${CYAN}"          },
+          "punctuation": {
+            "color": "#${MAGENTA}"          },
+          "punctuation.bracket": {
+            "color": "#${MAGENTA}"          },
+          "punctuation.delimiter": {
+            "color": "#${MAGENTA}"          },
+          "punctuation.list_marker": {
+            "color": "#${MAGENTA}"          },
+          "punctuation.special": {
+            "color": "#${MAGENTA}"          },
+          "string": {
+            "color": "#${GREEN}"          },
+          "string.escape": {
+            "color": "#${YELLOW}"          },
+          "string.regex": {
+            "color": "#${GREEN}"          },
+          "string.special": {
+            "color": "#${GREEN}"          },
+          "string.special.symbol": {
+            "color": "#${GREEN}"          },
+          "tag": {
+            "color": "#${BLUE}"          },
+          "text.literal": {
+            "color": "#${GREEN}"          },
+          "title": {
+            "color": "#${FG}"          },
+          "type": {
+            "color": "#${YELLOW}"          },
+          "type.interface": {
+            "color": "#${YELLOW}"          },
+          "variable": {
+            "color": "#${FG}"          },
+          "variable.member": {
+            "color": "#${CYAN}"          },
+          "variable.parameter": {
+            "color": "#${FG}"          },
+          "variable.special": {
+            "color": "#${MAGENTA}"          },
+          "variant": {
+            "color": "#${YELLOW}"          }
+        }
+      }
+    }
+  ]
+}
